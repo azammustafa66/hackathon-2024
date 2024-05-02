@@ -9,7 +9,6 @@ import Exam from './components/exams/Exam'
 import Exams from './Exams'
 import FourOhFour from './components/error/404'
 import ConductExam from './components/exams/ConductExam'
-import ProtectedRoutes from './components/protected/ProtectedRoutes'
 
 export default function App() {
   return (
@@ -20,30 +19,9 @@ export default function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp />} />
         <Route path='/register-institute' element={<RegisterInstitute />} />
-        <Route
-          path='/exams'
-          element={
-            <ProtectedRoutes>
-              <Exams />
-            </ProtectedRoutes>
-          }
-        />
-        <Route
-          path='/exam'
-          element={
-            <ProtectedRoutes>
-              <Exam />
-            </ProtectedRoutes>
-          }
-        />
-        <Route
-          path='/conduct-exam'
-          element={
-            <ProtectedRoutes>
-              <ConductExam />
-            </ProtectedRoutes>
-          }
-        />
+        <Route path='/exams' element={<Exams />} />
+        <Route path='/exam' element={<Exam />} />
+        <Route path='/conduct-exam' element={<ConductExam />} />
         <Route path='*' element={<FourOhFour />} />
       </Routes>
     </Router>
